@@ -9,17 +9,12 @@
 
 html {
     /* set font chữ lên tất cả các thẻ chữ */
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
-.clear {
-    clear: both;
-}
 
-.text-white {
-    color: #fff !important;
-}
 
 /* 
 1. Từ ngoài vào trong 
@@ -36,6 +31,87 @@ html {
 4. kiểu chữ(Kiểu chữ, hình tròn, vuông, ...) 
 */
 
+
+
+/* Common */
+.clear {
+    clear: both;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full {
+
+    width: 100%;
+
+}
+
+.col-half {
+
+    width: 50%;
+
+}
+
+.col-third {
+
+    width: 33.33333%;
+
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+
+}
+
+.btn:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* Main */
 #main {}
 
 #header {
@@ -181,7 +257,7 @@ html {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0;
+    padding: 64px 0 112px;
 }
 
 #content .section-heading {
@@ -211,13 +287,7 @@ html {
 
 }
 
-#content .member-item {
-    float: left;
-    /* width: 33.33333%; */
-    width: calc(100%/3);
-    text-align: center;
 
-}
 
 #content .member-name {
     font-size: 15px;
@@ -277,15 +347,11 @@ html {
 /* Places */
 
 .places-list {
-    margin: 32px -8px 0;
-    padding-bottom: 48px;
+    margin-top: 32px;
+
 }
 
-.place-item {
-    float: left;
-    width: 33.33333%;
-    padding: 0 8px;
-}
+
 
 .place-img {
     /* bang kich thuoc cua the chua no */
@@ -319,18 +385,179 @@ html {
     line-height: 1.4;
 }
 
-.place-buy-btn {
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-container {
+
+    background: #fff;
+    width: 900px;
+    /* de cach moi ben 16px thi ta dung ham tinh sau */
+    max-width: calc(100% -32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadein ease 0.5s;
+}
+
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
     color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    padding: 11px 16px;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-header {
+    background: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #fff;
+}
+
+.modal-heading-icon {
+    margin-right: 16px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-lable {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+
+#pay-tickets {
+    background: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+}
+
+#pay-tickets:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+    ;
+}
+
+.modal-footer a {
+    color: #2196F3
+}
+
+@keyframes modalFadein {
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact form */
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
     display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 11px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* Map section */
+.map-section img {
+    width: 100%;
+}
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .socials-list {
+    font-size: 24px;
+
+}
+
+#footer .socials-list a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .socials-list a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copyright {
     margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+
 }
 
-.place-buy-btn:hover {
-    color: #000;
-    background-color: #ccc;
-}
+#footer .copyright a {
 
-#footer {}
+    color: rgba(0, 0, 0, 0.6);
+
+}
