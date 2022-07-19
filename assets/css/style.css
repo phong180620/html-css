@@ -108,6 +108,9 @@ html {
     border: none;
     text-align: center;
 
+    appearance: none;
+    -webkit-appearance: none;
+
 }
 
 .btn:hover {
@@ -245,7 +248,7 @@ html {
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+    background: url('../img/slider/slider1.jpg') top center / cover no-repeat;
 
 
 }
@@ -258,6 +261,7 @@ html {
     transform: translateX(-50%); */
     width: 100%;
     text-align: center;
+    text-shadow: 0 0 1px #000;
 
 
 }
@@ -540,6 +544,15 @@ html {
 .contact-info i[class*="ti-"] {
     width: 30px;
     display: inline-block;
+}
+
+.contact-info a {
+    color: #101aef;
+    opacity: 0.8;
+}
+
+.contact-info a:hover {
+    opacity: 1;
 }
 
 .contact-form {
